@@ -9,27 +9,27 @@
 -- @module CardScene
 local CardScene = class("CardScene",function()
     return cc.Scene:create()
-end)
+end);
 
 function CardScene.create()
     local scene = CardScene.new()
-    scene:addChild(scene:createlayerTable())
-    scene:addChild(scene:createLayerMenu())
-    return scene
+    scene:addChild(scene:createlayerTable());
+    scene:addChild(scene:createLayerMenu());
+    return scene;
 end
 
 
 function CardScene:ctor()
-    self.visibleSize = cc.Director:getInstance():getVisibleSize()
-    self.origin = cc.Director:getInstance():getVisibleOrigin()
-    self.schedulerID = nil
+    self.visibleSize = cc.Director:getInstance():getVisibleSize();
+    self.origin = cc.Director:getInstance():getVisibleOrigin();
+    self.schedulerID = nil;
 end
 
 function CardScene:playBgMusic()
-    local bgMusicPath = cc.FileUtils:getInstance():fullPathForFilename("background.mp3") 
-    cc.SimpleAudioEngine:getInstance():playMusic(bgMusicPath, true)
-    local effectPath = cc.FileUtils:getInstance():fullPathForFilename("effect1.wav")
-    cc.SimpleAudioEngine:getInstance():preloadEffect(effectPath)
+    local bgMusicPath = cc.FileUtils:getInstance():fullPathForFilename("background.mp3");
+    cc.SimpleAudioEngine:getInstance():playMusic(bgMusicPath, true);
+    local effectPath = cc.FileUtils:getInstance():fullPathForFilename("effect1.wav");
+    cc.SimpleAudioEngine:getInstance():preloadEffect(effectPath);
 end
 
 -- create farm
@@ -185,4 +185,4 @@ function CardScene:createLayerMenu()
     return layerMenu
 end
 
-return CardScene
+return CardScene;
