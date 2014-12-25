@@ -10,15 +10,31 @@
 CCSceneUtil = class("CCSceneUtil");
 
 -------------------------------------------------------------------------------
--- 创建精灵(Sprite), 指定位置(如果提供location参数).
--- ERROR: 无法在此方法内正确创建Sprite.
--- @function [parent=#CCSceneUtil] create
--- @param #string fileName 创建Sprite的文件路径
--- @param #table location 形如{x=*,y=*}的table
-function CCSceneUtil.create(fileName, location)
-    local mySprite = cc.Sprite:create(fileName);
-    mySprite:setPosition(location.x, location.y);
-    return mySprite;
+-- 创建一个逐渐过渡到目标颜色的切换动画.
+-- @field [parent=#CCSceneUtil] #string FADE
+CCSceneUtil.FADE = "fade";
+-------------------------------------------------------------------------------
+-- 创建一个逐渐透明的过渡动画.
+-- @field [parent=#CCSceneUtil] #string CROSS_FADE
+CCSceneUtil.CROSS_FADE = "cross_fade";
+
+-------------------------------------------------------------------------------
+-- 获取指定类型的场景转换包装.
+-- @function [parent=#CCSceneUtil] getTransition
+-- @param #string type 场景切换的类型
+-- @param #string sceneName 场景名
+-- @param #float duration 场景切换的持续时间
+function CCSceneUtil.getTransition(type, sceneName, duration, ...)
+    local nextScene = require(sceneName).create();
+    local trasitionScene = nil;
+    -- 参考网址: http://blog.csdn.net/liuhong135541/article/details/24375915.
+    if type == CCSceneUtil.FADE then
+        trasitionScene = cc.TransitionFade:create(duration, nextScene);
+    elseif type == CCSceneUtil.CROSS_FADE then
+        trasitionScene = cc.TransitionCrossFade:create(duration, nextScene);
+--    elseif type == CCSceneUtil.FADE then
+    end
+    return trasitionScene;
 end
 
 return CCSceneUtil;

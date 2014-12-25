@@ -24,7 +24,7 @@ end
 -- 创建一个字符型的菜单项.
 -- @function [parent=#CCMenuUtil] createMenuItemFont
 -- @param #string text 文字内容
--- @param #string color 字体颜色cc.c3b(R, G, B)或cc.c4b(A, R, G, B)
+-- @param #color4table color 字体颜色cc.c3b(R, G, B)或cc.c4b(A, R, G, B)
 -- @param #string position 文字坐标
 -- @param #string callback 菜单响应事件
 -- @return #cc.MenuItemFont 字符型的菜单项

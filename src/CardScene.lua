@@ -76,8 +76,8 @@ function CardScene:createLayerMenu()
         x = self.origin.x + self.visibleSize.width / 2,
         y = self.origin.y + self.visibleSize.height / 2
     };
-    
-    local color = cc.c3b(0xFF,0xFF,0);
+
+    local color = ColorUtil.createFromInt(0xFFFF00);
     
     
     -- 创建一个文字菜单
@@ -96,7 +96,9 @@ function CardScene:createLayerMenu()
     function startMenuItemCallback(sender)
         print("点击了文字斗地主");
         -- 场景切换
-        CCDirectorUtil.gotoScene("LordCardScene");
+--        local trasitionScene = CCSceneUtil.getTransition(CCSceneUtil.CROSS_FADE, "LordCardScene", 1);
+        local trasitionScene = CCSceneUtil.getTransition(CCSceneUtil.FADE, "LordCardScene", 1);
+        CCDirectorUtil.gotoScene(trasitionScene);
     end
     function pauseMenuItemCallback(sender)
         print("点击了文字暂停");

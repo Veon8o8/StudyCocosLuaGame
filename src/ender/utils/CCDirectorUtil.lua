@@ -14,13 +14,20 @@ CCDirectorUtil = class("CCDirectorUtil");
 -- @function [parent=#CCDirectorUtil] createMenu
 -- @param #string sceneName 场景名字
 function CCDirectorUtil.gotoScene(sceneName)
-    local scene = require(sceneName)
-    local gameScene = scene.create()
-
-    if cc.Director:getInstance():getRunningScene() then
-        cc.Director:getInstance():replaceScene(gameScene)
-    else
-        cc.Director:getInstance():runWithScene(gameScene)
+    print("数据类型: " .. type(sceneName));
+    local gameScene = nil;
+    if type(sceneName) == "string" then
+        gameScene = require(sceneName).create();
+    elseif type(sceneName) == "userdata" then
+        gameScene = sceneName;
+    end
+    
+    if gameScene ~= nil then
+        if cc.Director:getInstance():getRunningScene() then
+            cc.Director:getInstance():replaceScene(gameScene);
+        else
+            cc.Director:getInstance():runWithScene(gameScene);
+        end
     end
 end
 

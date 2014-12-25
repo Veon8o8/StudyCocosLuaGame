@@ -5,6 +5,7 @@ require "ender.utils.ArrayUtil"
 require "ender.utils.AudioUtil"
 require "ender.utils.EventUtil"
 -- require "ender/utils/EventUtil" 的写法也是可以的
+require "ender.utils.ColorUtil"
 
 -- cc界面相关工具
 require "ender.utils.CCSpriteUtil"
