@@ -7,7 +7,7 @@
 -- 作者: Andrew Yuan<br>
 -- 时间: 2014-12-06.
 -- @module ArrayUtil
-ArrayUtil = class("ArrayUtil")
+ArrayUtil = class("ArrayUtil");
 
 -------------------------------------------------------------------------------
 -- 返回table的大小.
@@ -105,4 +105,4 @@ function ArrayUtil.toString(input)
     return ret
 end
 
-return ArrayUtil
+return ArrayUtil;

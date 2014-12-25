@@ -7,7 +7,7 @@
 -- 作者: Andrew Yuan<br>
 -- 时间: 2014-12-06.
 -- @module CCMenuUtil
-CCMenuUtil = class("CCMenuUtil")
+CCMenuUtil = class("CCMenuUtil");
 
 -------------------------------------------------------------------------------
 -- 创建菜单.
@@ -78,3 +78,5 @@ function CCMenuUtil.createMenuItemImage(text, color, position, callback)
     menuItem:registerScriptTapHandler(callback);           --设置菜单响应事件
     return menuItem;
 end
+
+return CCMenuUtil;

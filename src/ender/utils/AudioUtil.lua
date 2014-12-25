@@ -1,10 +1,13 @@
 --[[
-AudioUtil, 声音工具，包装Cocos2d播放声音的方法
-作者: Andrew Yuan
-时间: 2014-12-06
+版权信息
 ]]--
 
-AudioUtil = class("AudioUtil")
+-------------------------------------------------------------------------------
+-- 声音工具，包装Cocos2d播放声音的方法.
+-- 作者: Andrew Yuan<br>
+-- 时间: 2014-12-06.
+-- @module AudioUtil
+AudioUtil = class("AudioUtil");
 
 -------------------------------------------------------------------------------
 -- 播放一段音乐.
@@ -34,4 +37,4 @@ function AudioUtil.playEffect(filename)
     effectID = cc.SimpleAudioEngine:getInstance():playEffect(effectPath);
 end
 
-return AudioUtil
+return AudioUtil;

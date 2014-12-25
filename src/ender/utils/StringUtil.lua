@@ -7,7 +7,7 @@
 -- 作者: Andrew Yuan<br>
 -- 时间: 2014-12-06.
 -- @module StringUtil
-StringUtil = class("StringUtil")
+StringUtil = class("StringUtil");
 
 -------------------------------------------------------------------------------
 -- 返回input字符串的长度.
@@ -124,4 +124,4 @@ function StringUtil.substring(input, startIndex, endIndex)
     return string.sub(input, startIndex, endIndex)
 end
 
-return StringUtil
+return StringUtil;

@@ -1,10 +1,13 @@
 --[[
-EventUtil, 事件工具，包装Cocos2d事件相关方法：事件注册，...
-作者: Andrew Yuan
-时间: 2014-12-06
+版权信息
 ]]--
 
-EventUtil = class("EventUtil")
+-------------------------------------------------------------------------------
+-- 事件工具，包装Cocos2d事件相关方法：事件注册，...
+-- 作者: Andrew Yuan<br>
+-- 时间: 2014-12-06.
+-- @module EventUtil
+EventUtil = class("EventUtil");
 
 -------------------------------------------------------------------------------
 -- 注册一组事件到指定的Cocos2D层.
@@ -30,4 +33,4 @@ function EventUtil.getLocation(touch)
     return location;
 end
 
-return EventUtil
+return EventUtil;
